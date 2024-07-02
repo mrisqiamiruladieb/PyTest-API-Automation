@@ -78,8 +78,14 @@ def test_get_list_of_users():
         ]
     }
 
+    url = BASE_URL + "/api/users"
+
+    query_params = {
+        'page': 2,
+    }
+
     # Making a get request
-    response = requests.get(BASE_URL + "/api/users?page=2")
+    response = requests.get(url, params=query_params)
 
     # Convert json into dictionary
     respJson = response.json()
@@ -101,7 +107,7 @@ def test_get_list_of_users():
     # print("\nResponse: ", response)
 
     # Pretty Printing JSON string back
-    print("Response Body:\n", json.dumps(respJson, indent=4, sort_keys=True))
+    print("Response Body:\n", json.dumps(respJson, indent=4, sort_keys=False))
 
     # get response headers
     content_type = response.headers.get("Content-Type")
