@@ -6,7 +6,6 @@ from jsonschema import validate
 # Set the base url
 BASE_URL = "https://reqres.in"
 
-
 def test_get_list_of_users():
 
     jsonSchema = {
