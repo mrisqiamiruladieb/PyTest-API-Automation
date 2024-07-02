@@ -7,7 +7,7 @@
   - `pytest --help` or `py -m pip list`
 
 ## How to Run the PyTest
-- **Create** a file *containing* function and assert test code
+- **Create** a file *containing* function (`def test_bla_bla():`) and assert test code
 - **Run** the file in *cmd/terminal* :
   - `pytest path/to_file.py`
   - Print to console : `pytest -s path/to_file.py` ([References](https://stackoverflow.com/questions/24617397/how-do-i-print-to-console-in-pytest))
