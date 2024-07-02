@@ -66,7 +66,7 @@ def test_success_get_single_user():
 
     path_params = "2"
 
-    # Making a post request
+    # Making a get request
     response = requests.get(url + path_params)
 
     # Convert json into dictionary
