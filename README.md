@@ -17,6 +17,12 @@
 - Import required **libraries**
 - Code ([References](https://www.geeksforgeeks.org/response-json-python-requests/)) and **run**
   
+## Validate JSON Schema Response Body
+- Configuring **files** to make *requests*
+- Import required **libraries**
+- **Create** a json schema response body *file/variable* to verify using [the Helper](https://github.com/mrisqiamiruladieb/REST-Assured-Java-Part-1/blob/master/README.md#helper)
+- Code ([References](https://builtin.com/software-engineering-perspectives/python-json-schema)) and *run*
+
 ## Issues and Solutions
 - Errors/warnings when executing **the requests**
   - ***Error/warning messages :*** RequestsDependencyWarning: urllib3 (2.2.1) or chardet (3.0.4) doesn't match a supported version! bla..bla..
