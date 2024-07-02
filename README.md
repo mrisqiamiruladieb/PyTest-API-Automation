@@ -15,7 +15,7 @@
 ## Create an example of a GET request
 - Create file **get_list_users.py**
 - Import required **libraries**
-- Code ([References](https://www.geeksforgeeks.org/response-json-python-requests/)) and **run**
+- Code ([References 1](https://www.geeksforgeeks.org/response-json-python-requests/), [References 2](https://medium.com/@qebuzzz/validating-and-asserting-responses-in-python-requests-14b40908327a)) and **run**
   
 ## Validate JSON Schema Response Body
 - Configuring **files** to make *requests*
