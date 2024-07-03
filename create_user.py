@@ -41,7 +41,7 @@ def test_success_create_user():
     }
 
     # Making a post request
-    response = requests.post(BASE_URL + "/api/users", data=payload)
+    response = requests.post(BASE_URL + "/api/users", json=payload)
 
     # Convert json into dictionary
     respJson = response.json()
@@ -53,6 +53,7 @@ def test_success_create_user():
 
     print("Method : ", response.request)
     print("Url : ", response.url)
+    print("Request Body : \n", json.dumps(payload, indent=4, sort_keys=False))
 
     print("\n------------Response------------")
 
