@@ -2,6 +2,7 @@
 import requests
 import json
 from jsonschema import validate
+import random
 
 # Set the base url
 BASE_URL = "https://kasir-api.belajarqa.com"
@@ -43,8 +44,11 @@ def test_success_register():
         ]
     }
 
+    # Generate random number
+    rand_int = random.randint(1, 999)
+
     payload = {
-        "name": "nama Toko",
+        "name": "nama Toko " + str(rand_int),
         "email": "hello@gmail.com",
         "password": "12345678",
     }
