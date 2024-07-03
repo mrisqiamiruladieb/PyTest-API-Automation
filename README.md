@@ -15,7 +15,7 @@
 ## Create an example of a GET request
 - Create file **get_list_users.py**
 - Import required **libraries**
-- Code ([References 1](https://www.geeksforgeeks.org/response-json-python-requests/), [References 2](https://medium.com/@qebuzzz/validating-and-asserting-responses-in-python-requests-14b40908327a)) and **run**
+- Code ([References 1](https://www.geeksforgeeks.org/response-json-python-requests/), [References 2](https://medium.com/@qebuzzz/validating-and-asserting-responses-in-python-requests-14b40908327a), [References 3](https://github.com/Anshul-Sonpure/API-Testing-using-Python/tree/master)) and **run**
   
 ## Validate JSON Schema Response Body
 - Configuring **files** to make *requests*
@@ -27,3 +27,6 @@
 - Errors/warnings when executing **the requests**
   - ***Error/warning messages :*** RequestsDependencyWarning: urllib3 (2.2.1) or chardet (3.0.4) doesn't match a supported version! bla..bla..
   - **Solution :** install or upgrade the requests module in **pip** or **pip3** ([References](https://stackoverflow.com/questions/56155627/requestsdependencywarning-urllib3-1-25-2-or-chardet-3-0-4-doesnt-match-a-s))
+- **Error** when calling **global variables** (*store* and *reuse* variables) for **end-to-end testing**
+  - ***Error messages :*** UnboundLocalError: local variable 'email_request' referenced before assignment
+  - **Solution :** declare the variable to be a global variable for each test or function ([References](https://youtu.be/7-uqSb83BTg?si=nKbLNzL5D5hIgHcc))
