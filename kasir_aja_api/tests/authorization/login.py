@@ -7,7 +7,7 @@ from jsonschema import validate
 BASE_URL = "https://kasir-api.belajarqa.com"
 
 
-def test_success_register():
+def test_success_login():
 
     jsonSchema = {
         "$schema": "http://json-schema.org/draft-07/schema#",
@@ -23,16 +23,52 @@ def test_success_register():
             "data": {
                 "type": "object",
                 "properties": {
-                    "name": {
+                    "accessToken": {
                         "type": "string"
                     },
-                    "email": {
+                    "refreshToken": {
                         "type": "string"
+                    },
+                    "user": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "role": {
+                                "type": "string"
+                            },
+                            "email": {
+                                "type": "string"
+                            },
+                            "officeId": {
+                                "type": "string"
+                            },
+                            "companyId": {
+                                "type": "string"
+                            },
+                            "company_name": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name",
+                            "role",
+                            "email",
+                            "officeId",
+                            "companyId",
+                            "company_name"
+                        ]
                     }
                 },
                 "required": [
-                    "name",
-                    "email"
+                    "accessToken",
+                    "refreshToken",
+                    "user"
                 ]
             }
         },
@@ -44,13 +80,12 @@ def test_success_register():
     }
 
     payload = {
-        "name": "nama Toko",
         "email": "hello@gmail.com",
         "password": "12345678",
     }
 
     # Making a post request
-    response = requests.post(BASE_URL + "/registration", data=payload)
+    response = requests.post(BASE_URL + "/authentications", data=payload)
 
     # Convert json into dictionary
     respJson = response.json()
@@ -73,11 +108,9 @@ def test_success_register():
 
     # Parse the request body
     email_request = payload.get('email')
-    name_request = payload.get('name')
 
     # Parse the response body
-    email_response = respJson.get('data').get('email')
-    name_response = respJson.get('data').get('name')
+    email_response = respJson.get('data').get('user').get('email')
 
     # get response headers
     content_type = response.headers.get("Content-Type")
@@ -86,7 +119,6 @@ def test_success_register():
     assert response.status_code == 201, "Unexpected status code: " + \
         str(response.status_code)
     assert email_response == email_request, "Unexpected email: " + email_request
-    assert name_response == name_request, "Unexpected email: " + name_request
 
     # Asserting Response Headers
     assert content_type == "application/json; charset=utf-8", "Unexpected Content-Type: " + content_type
@@ -98,7 +130,7 @@ def test_success_register():
         str(len(str(respJson.get("status"))))
 
     # check the substring in the response body
-    assert bool("berhasil" in string_resp_body) == True
+    assert bool("Authentication berhasil ditambahkan" in string_resp_body) == True
 
     validate(instance=respJson, schema=jsonSchema)
     # No error, the JSON is valid.
