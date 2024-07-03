@@ -2,6 +2,7 @@
 import requests
 import json
 from jsonschema import validate
+import random
 
 # Set the base url
 BASE_URL = "https://reqres.in"
@@ -35,8 +36,11 @@ def test_success_create_user():
         ]
     }
 
+    # generate random int
+    rand_int = random.randint(1,999)
+
     payload = {
-        "name": "morpheus",
+        "name": "morpheus " + str(rand_int),
         "job": "leader"
     }
 
