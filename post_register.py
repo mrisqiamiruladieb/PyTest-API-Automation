@@ -2,6 +2,7 @@
 import requests
 import json
 from jsonschema import validate
+import random
 
 # Set the base url
 BASE_URL = "https://reqres.in"
@@ -27,9 +28,12 @@ def test_successful_registration():
         ]
     }
 
+    # generate random int
+    rand_int = random.randint(1,999)
+
     payload = {
         "email": "eve.holt@reqres.in",
-        "password": "pistol"
+        "password": "pistol" + str(rand_int)
     }
 
     # Making a post request
@@ -45,6 +49,7 @@ def test_successful_registration():
 
     print("Method : ", response.request)
     print("Url : ", response.url)
+    print("Request Body : \n", json.dumps(payload, indent=4, sort_keys=False))
 
     print("\n------------Response------------")
 
