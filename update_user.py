@@ -2,6 +2,7 @@
 import requests
 import json
 from jsonschema import validate
+import random
 
 # Set the base url
 BASE_URL = "https://reqres.in"
@@ -34,9 +35,12 @@ def test_success_update_user():
 
     path_params = "2"
 
+    # generate random int
+    rand_int = random.randint(1,999)
+
     payload = {
         "name": "morpheus-update",
-        "job": "zion resident-update"
+        "job": "zion resident-update" + str(rand_int)
     }
 
     # Making a put request
@@ -52,6 +56,7 @@ def test_success_update_user():
 
     print("Method : ", response.request)
     print("Url : ", response.url)
+    print("Request Body : \n", json.dumps(payload, indent=4, sort_keys=False))
 
     print("\n------------Response------------")
 
