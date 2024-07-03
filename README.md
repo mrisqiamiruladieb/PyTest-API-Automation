@@ -30,3 +30,6 @@
 - **Error** when calling **global variables** (*store* and *reuse* variables) for **end-to-end testing**
   - ***Error messages :*** UnboundLocalError: local variable 'email_request' referenced before assignment
   - **Solution :** declare the variable to be a global variable for each test or function ([References](https://youtu.be/7-uqSb83BTg?si=nKbLNzL5D5hIgHcc))
+- **Resolve** *cannot import files* from *different directories*
+  - **Solution :** using [Importing From Parent or Sibling Directories With Package Relative Imports](https://sentry.io/answers/import-files-from-a-different-folder-in-python/#importing-from-parent-or-sibling-directories-with-package-relative-imports)
+    - **Prerequisite:** *create* `__init__.py` file in *each directory* (*to recognise the directory is a package*)
