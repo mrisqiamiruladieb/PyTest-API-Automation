@@ -33,3 +33,9 @@
 - **Resolve** *cannot import files* from *different directories*
   - **Solution :** using [Importing From Parent or Sibling Directories With Package Relative Imports](https://sentry.io/answers/import-files-from-a-different-folder-in-python/#importing-from-parent-or-sibling-directories-with-package-relative-imports)
     - **Prerequisite:** *create* `__init__.py` file in *each directory* (*to recognise the directory is a package*)
+- *Get* response json **dictionary** data (*array, object*)
+  - **Solution:** *Examples*
+    - ([References](https://stackoverflow.com/questions/49595050/attributeerror-list-object-has-no-attribute-get)) Access data[1].last_name
+      - `second_user_last_name = respJson.get('data')[1].get('last_name')`
+    - Access data[0].id
+      - `first_user_id = respJson['data'][0]['id']`

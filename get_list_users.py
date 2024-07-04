@@ -116,6 +116,17 @@ def test_get_list_of_users():
         str(response.status_code)
     assert respJson.get('page') == 2
 
+    # Access data[0].id
+    # accesses the id field of the first data object in the data array of the respJson dictionary
+    first_user_id = respJson['data'][0]['id']
+    # print("first user id : ", first_user_id)
+    assert first_user_id == 7, "Unexpected first user id: " + str(first_user_id)
+
+    # Access data[1].last_name
+    second_user_last_name = respJson.get('data')[1].get('last_name')
+    # print("Second user last name : ", second_user_last_name)
+    assert second_user_last_name == "Ferguson", "Unexpected second user last name: " + second_user_last_name
+    
     # Asserting Response Headers
     assert content_type == "application/json; charset=utf-8", "Unexpected Content-Type: " + content_type
 
