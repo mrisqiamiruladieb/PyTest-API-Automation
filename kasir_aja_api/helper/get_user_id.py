@@ -3,7 +3,12 @@ import requests
 import json
 from jsonschema import validate
 import random
-from get_access_token import success_get_access_token
+
+# path for test.py
+# from get_access_token import success_get_access_token
+
+# path for testing
+from .get_access_token import success_get_access_token
 
 # Set the base url
 BASE_URL = "https://kasir-api.belajarqa.com"
