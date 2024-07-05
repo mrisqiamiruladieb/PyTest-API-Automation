@@ -3,8 +3,10 @@
 ## Pre-requisites
 - *Install PyTest module* in **cmd/terminal**:
   - **Run :** `pip install pytest`
-- Check installation
-  - `pytest --help` or `py -m pip list`
+  - Check installation
+    - `pytest --help` or `py -m pip list`
+- *Install HTML Report plugin* in **cmd/terminal**:
+  - **Run:** `pip install pytest-html`
 
 ## How to Run the PyTest
 - **Create** a file *containing* function (`def test_bla_bla():`) and assert test code
@@ -22,6 +24,12 @@
 - Import required **libraries**
 - **Create** a json schema response body *file/variable* to verify using [the Helper](https://github.com/mrisqiamiruladieb/REST-Assured-Java-Part-1/blob/master/README.md#helper)
 - Code ([References](https://builtin.com/software-engineering-perspectives/python-json-schema)) and *run*
+
+## HTML Report
+- *To generate a report*, **go to the directory of the Pytest/test file** that needs to be run ([References](https://www.tutorialspoint.com/selenium_webdriver/selenium_webdriver_generating_html_test_reports_in_python.htm#:~:text=To%20generate%20a%20HTML%20report,html.)) or in **the root directory** is also fine
+- Then **run** the command: `pytest --html=report.html` or `pytest -s path\to\test_file.py --html=report.html`
+- A new file called **report.html will be created** inside the project/directory
+- **Open report.html file** in browser
 
 ## Issues and Solutions
 - Errors/warnings when executing **the requests**
