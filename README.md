@@ -5,7 +5,7 @@
   - **Run :** `pip install pytest`
   - Check installation
     - `pytest --help` or `py -m pip list`
-- *Install HTML Report plugin* in **cmd/terminal**:
+- *Install [HTML Report](#html-report) plugin* in **cmd/terminal**:
   - **Run:** `pip install pytest-html`
 
 ## How to Run the PyTest
