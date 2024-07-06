@@ -128,10 +128,13 @@ def test_success_get_user_list():
 
     # Asserting Response Headers
     assert content_type == "application/json; charset=utf-8", "Unexpected Content-Type: " + content_type
-    hello = response_json['data']['users'][0]
-    print("this is id: " + hello['id'])
+
+    # access users[0].id
+    # hello = response_json['data']['users'][0]
+    # print("this is id: " + hello['id'])
+
     # assert user name
-    assert user_name == response_json.get('data').get('users[0].name'), "Unexpected user name: " + user_name
+    assert user_name == response_json.get('data').get('users')[0].get('name'), "Unexpected user name: " + user_name
 
     # is empty response body
     assert len(string_resp_body) != 0, "Unexpected Response Body Length " + \
